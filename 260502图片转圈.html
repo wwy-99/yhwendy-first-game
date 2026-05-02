@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试外星人</title>
+    <style>
+        .alien {
+            width: 250px;
+            height: 250px;
+            background-image: url('img/外星人哭%20.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 50px auto;
+        }
+        .alien.spin {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="alien" id="alien"></div>
+    <script>
+        const alien = document.getElementById('alien');
+        alien.addEventListener('click', function() {
+            alien.classList.add('spin');
+            setTimeout(() => {
+                alien.classList.remove('spin');
+            }, 300);
+        });
+    </script>
+</body>
+</html>
